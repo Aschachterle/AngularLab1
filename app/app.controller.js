@@ -5,7 +5,7 @@ function TodoController() {
         { task: "Walk the dog", completed: true},
         { task: "Grocery shop", completed: false},
         { task: "Fill the gas tank", completed: true},
-        { task: "Kill flanders", completed: false}
+        { task: "Take trash to curb", completed: false}
     ];
 }
 
