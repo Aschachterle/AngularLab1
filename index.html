@@ -13,10 +13,11 @@
     <main ng-controller="TodoController as $ctrl">
         <p class="title">TODO List</p>
         <p class="subtext">A place to store things you have to do!</p>
-        <input class="input" type="text" placeholder="Filter your todos">
+        <input class="input" type="text" placeholder="Filter your todos" ng-model="$ctrl.newTask.filter">
+
         
         <ol>
-            <li ng-repeat="todo in $ctrl.tasks">
+            <li ng-repeat="todo in $ctrl.tasks | filter:$ctrl.newTask.filter">
                 <div class="contentleft">
                     <p class="number">{{$index + 1}}.</p>
                     <button class="completeButton" ng-click="$ctrl.completeTask($index)" ng-if="!todo.completed">Complete</button>
