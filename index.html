@@ -24,12 +24,10 @@
                     <!-- task name -->
                     <p class="item" ng-class="{completed: todo.completed}">{{todo.task}}</p>
                 </div>
-                <a ng-click="$ctrl.removeTask($index)">
-                    <i class="material-icons">delete_outline</i>
-                </a>
+                <i class="material-icons can" ng-click="$ctrl.removeTask($index)">delete_outline</i>
             </li>
         </ol>
-        <form ng-submit="$ctrl.addTask($ctrl.newTask);">
+        <form class="addfield" ng-submit="$ctrl.addTask($ctrl.newTask);">
             <input class="input" type="text" placeholder="Add your todos" ng-model="$ctrl.newTask.task">
             <button class="add" ng-disabled="!$ctrl.newTask.task">Add</button>
         </form>
