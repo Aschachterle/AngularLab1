@@ -17,22 +17,29 @@
         
         <ol>
             <li ng-repeat="todo in $ctrl.tasks">
-                <div class="contentleft"><span class="number">{{$index + 1}}.</span>
-                    <button class="completeButton" type="button" ng-if="!todo.completed">Complete</button>
+                <div class="contentleft">
+                    <p class="number">{{$index + 1}}.</p>
+                    <button class="completeButton" ng-click="$ctrl.completeTask($index)" ng-if="!todo.completed">Complete</button>
                     <!-- task name -->
                     <p class="item" ng-class="{completed: todo.completed}">{{todo.task}}</p>
                 </div>
-                <a href="">
+                <a ng-click="$ctrl.removeTask($index)">
                     <i class="material-icons">delete_outline</i>
                 </a>
             </li>
         </ol>
-
-        <input class="input" type="text" placeholder="Add your todos">
-        <button class="add" type="button">Add</button>
+        <form ng-submit="$ctrl.addTask($ctrl.newTask);">
+            <input class="input" type="text" placeholder="Add your todos" ng-model="$ctrl.newTask.task">
+            <button class="add" ng-disabled="!$ctrl.newTask.task">Add</button>
+        </form>
     </main>
     <script src="https://code.angularjs.org/1.6.5/angular.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/app.controller.js"></script>
 </body>
 </html>
+
+<!-- <form class="footer" ng-submit="$ctrl.addTask($ctrl.newTodo);">
+    <input type="text" ng-model="$ctrl.newTodo.task" placeholder="Add your to do">
+    <button class="addButton" ng-disabled="!$ctrl.newTodo.task">Add</button>
+  </form> -->
