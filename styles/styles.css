@@ -35,6 +35,7 @@ main {
     border-radius: 7px;
     font-size: 13px;
     text-indent: 4px;
+    outline: none;
 }
 input::placeholder {
     opacity: .5;
